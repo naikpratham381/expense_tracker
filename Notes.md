@@ -115,4 +115,15 @@ append()Add an item to the end of a list
 - render_template("index.html") = tells Flask to find and display an HTML file from the templates folder
 - if __name__ == "__main__": = only run this code if the file is run directly (not imported)
 - app.run(debug=True) = starts the local web server, auto-restarts on save, shows helpful errors
-- Ran locally at http://127.0.0.1:5000 — successfully saw the homepage! 🎉
+- Ran locally at http://127.0.0.1:5000 — successfully saw the homepage! 
+
+-------------------------------------------------------------------------
+
+## Phase 2 - Feature: Add Expense (Web Form)
+- Learned: HTML forms, GET vs POST, request.form, redirect + url_for
+- GET request = "show me a page" (visiting a URL)
+- POST request = "here's data, process it" (submitting a form)
+- request.form["amount"] = grabs the value from an HTML input with name="amount"
+- redirect(url_for("home")) = sends browser to another page after processing (prevents duplicate submission on refresh)
+- Reused the same save_expenses()/expenses.append() logic from main.py — backend logic didn't need to change!
+- HTML <input name="..."> must match exactly what request.form["..."] looks for
