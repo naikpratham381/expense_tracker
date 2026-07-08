@@ -166,3 +166,13 @@ append()Add an item to the end of a list
 - The captured value becomes a parameter of the function: def delete_expense(index):
 - loop.index = 1-based counter (for display), loop.index0 = 0-based counter (matches real list positions)
 - Used loop.index0
+
+-------------------------------------------------------------------------
+
+## Phase 2 - Final Feature: CSS Styling (Phase 2 Complete! 🎉)
+- Learned: Flask's static folder rule, url_for('static', ...)
+- static folder MUST sit at the same level as app.py, NOT nested inside another folder (data, templates, etc.) — this was a bug I hit and fixed!
+- Debugging tip: visiting /static/style.css directly in the browser is a quick way to check if Flask can find the CSS file at all (before worrying about whether it LOOKS applied)
+- url_for('static', filename='style.css') safely builds the correct path to a static file
+- Added the same <link> tag to all 5 HTML templates for consistent styling
+- Phase 2 (Flask website) is now complete — full CRUD app with styling!
