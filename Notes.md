@@ -139,3 +139,11 @@ append()Add an item to the end of a list
 - expenses|length = Jinja2's version of len()
 - loop.index = automatic counter Jinja2 provides inside a for-loop, starts at 1
 - expense.amount (dot notation) = access dictionary values inside templates, instead of expense['amount']
+
+-------------------------------------------------------------------------
+
+## Phase 2 - Feature: Total Spending (Web Page)
+- Reused the exact same accumulator pattern from main.py — no new concepts needed!
+- Calculated total in Python (app.py), then passed it to the template with render_template("total_spending.html", total=total)
+- Displayed with {{ total }} in HTML, same Jinja2 syntax as before
+- Key lesson: once you learn a pattern well (accumulator, templating), it works everywhere — command-line or web

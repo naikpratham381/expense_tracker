@@ -54,6 +54,13 @@ def add_expense():
 def view_expenses():
     return render_template("view_expenses.html", expenses=expenses)
 
+@app.route("/total-spending")
+def total_spending():
+    total = 0
+    for expense in expenses:
+        total = total + expense["amount"]
+
+    return render_template("total_spending.html", total=total)
 
 load_expenses()
 
