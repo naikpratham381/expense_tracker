@@ -14,6 +14,15 @@ def add_expense():
     expenses.append(expense)
     print("Expense added successfully! ✅")
 
+def view_expenses():
+    if len(expenses) == 0:
+        print("No expenses recorded yet.")
+        return
+
+    print("\n----- All Expenses -----")
+    for index, expense in enumerate(expenses, start=1):
+        print(f"{index}. ₹{expense['amount']} | {expense['category']} | {expense['description']}")
+
 while True:
     print("\n===== Personal Expense Tracker =====")
     print("1. Add Expense")
@@ -26,7 +35,7 @@ while True:
     if choice == "1":
         add_expense()
     elif choice == "2":
-        print("View expenses feature coming soon!")
+        view_expenses()
     elif choice == "3":
         print("Total spending feature coming soon!")
     elif choice == "4":

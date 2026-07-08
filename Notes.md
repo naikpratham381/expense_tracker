@@ -36,3 +36,20 @@ ConceptMeaning
 def function_name():Create a reusable block of instructionsCalling a function function_name() : Actually running those instructions
 float() : Convert text into a decimal numberDictionary {...}Store labeled data (key-value pairs).
 append()Add an item to the end of a list
+## Feature 2: Add Expense
+- Learned: functions (def), calling a function, float(), dictionaries, .append()
+- def function_name(): = create a reusable block of code (like teaching a robot a command)
+- Calling it (function_name()) = actually running that code
+- float(input(...)) = convert typed text into a decimal number
+- Dictionary {"key": value} = labeled storage, easier than remembering list positions
+- expenses.append(expense) = add a new dictionary into our expenses list
+
+-----------------------------------------------------------------------------------------
+
+## Feature 3: View Expenses
+- Learned: len(), return, enumerate(), f-strings, dictionary['key']
+- len(expenses) = counts how many items are in the list
+- return = exits a function early (like break, but for functions)
+- enumerate(list, start=1) = loop through items WITH a running count attached
+- f-strings f"{variable}" = insert variables directly into printed text, cleaner than concatenation
+- expense['amount'] = grab a specific value out of a dictionary using its key/label
