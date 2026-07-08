@@ -34,6 +34,23 @@ def total_spending():
 
     print(f"\n💰 Total Spending: ₹{total}")
 
+def filter_by_category():
+    if len(expenses) == 0:
+        print("No expenses recorded yet.")
+        return
+
+    search_category = input("Enter category to filter by: ")
+    found_any = False
+
+    print(f"\n----- Expenses in '{search_category}' -----")
+    for expense in expenses:
+        if expense['category'].lower() == search_category.lower():
+            print(f"₹{expense['amount']} | {expense['description']}")
+            found_any = True
+
+    if not found_any:
+        print("No expenses found in that category.")
+
 
 
 
@@ -42,7 +59,8 @@ while True:
     print("1. Add Expense")
     print("2. View Expenses")
     print("3. View Total Spending")
-    print("4. Exit")
+    print("4. Filter by Category")
+    print("5. Exit")
 
     choice = input("Choose an option (1-4): ")
 
@@ -53,6 +71,8 @@ while True:
     elif choice == "3":
         total_spending()
     elif choice == "4":
+        filter_by_category()
+    elif choice == "5":
         print("Goodbye! 👋")
         break
     else:

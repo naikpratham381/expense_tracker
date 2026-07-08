@@ -61,3 +61,12 @@ append()Add an item to the end of a list
 - total = total + expense['amount'] → adds each expense's amount into the running total, one loop at a time
 - += is shorthand for "add to current value" (total += x same as total = total + x)
 - This pattern (start at 0, add in a loop) is used everywhere in programming — counting, summing, etc.
+
+-------------------------------------------------------------------------------------------
+
+## Feature 5: Filter by Category
+- Learned: flag variables, .lower(), not
+- found_any = False → a "light switch" variable that starts off, flips on only if we find a match
+- .lower() → converts text to lowercase so "Food" and "food" are treated as the same
+- not found_any → checks if the flag is still False after the loop (nothing was found)
+- Also updated the menu: added option 4 (Filter), shifted Exit to option 5
