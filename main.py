@@ -1,4 +1,18 @@
+import csv
+import os
+
 expenses = []
+FILE_PATH = "data/expenses.csv"
+
+
+def save_expenses():
+    os.makedirs("data", exist_ok=True)
+
+    with open(FILE_PATH, mode="w", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=["amount", "category", "description"])
+        writer.writeheader()
+        writer.writerows(expenses)
+
 
 def add_expense():
     amount = float(input("Enter amount spent: "))
@@ -12,6 +26,7 @@ def add_expense():
     }
 
     expenses.append(expense)
+    save_expenses()
     print("Expense added successfully! ✅")
 
 
@@ -74,6 +89,7 @@ def delete_expense():
         return
 
     removed = expenses.pop(index)
+    save_expenses()
     print(f"Deleted: ₹{removed['amount']} | {removed['category']} | {removed['description']}")
 
 

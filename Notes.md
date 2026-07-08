@@ -80,3 +80,18 @@ append()Add an item to the end of a list
 - Python lists start counting at 0, so we subtract 1 from the human-friendly number shown on screen
 - expenses.pop(index) removes an item from the list AND gives it back to us (unlike .append which only adds)
 - Always validate user input before using it — never trust that the user typed what you expect
+
+-----------------------------------------------------------------------------------------
+
+## Feature 7: Save to File
+- Learned: import, csv module, os module, open(), with statement, DictWriter
+- import csv / import os = bring in built-in toolboxes for extra functionality
+- os.makedirs("data", exist_ok=True) = create a folder safely, no crash if it already exists
+- open(path, mode="w") = open/create a file for writing (overwrites existing content)
+- with ... as file: = context manager, automatically closes the file safely when done
+- csv.DictWriter = converts a list of dictionaries into CSV rows automatically
+- writer.writeheader() = writes column titles
+- writer.writerows(expenses) = writes every dictionary as a row
+- Called save_expenses() after every add/delete so the file always matches memory
+- Note: expenses.csv now has data, but restarting the program still starts with an empty list in memory — Feature 8 (Load from File) will fix that.
+
