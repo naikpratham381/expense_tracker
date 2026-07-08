@@ -53,3 +53,11 @@ append()Add an item to the end of a list
 - enumerate(list, start=1) = loop through items WITH a running count attached
 - f-strings f"{variable}" = insert variables directly into printed text, cleaner than concatenation
 - expense['amount'] = grab a specific value out of a dictionary using its key/label
+
+-------------------------------------------------------------------------------------------
+## Feature 4: Total Spending
+- Learned: accumulator pattern
+- total = 0 → starts a "piggy bank" variable at zero
+- total = total + expense['amount'] → adds each expense's amount into the running total, one loop at a time
+- += is shorthand for "add to current value" (total += x same as total = total + x)
+- This pattern (start at 0, add in a loop) is used everywhere in programming — counting, summing, etc.
