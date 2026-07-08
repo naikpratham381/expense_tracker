@@ -1,5 +1,19 @@
 expenses = []
 
+def add_expense():
+    amount = float(input("Enter amount spent: "))
+    category = input("Enter category (e.g. Food, Travel): ")
+    description = input("Enter description: ")
+
+    expense = {
+        "amount": amount,
+        "category": category,
+        "description": description
+    }
+
+    expenses.append(expense)
+    print("Expense added successfully! ✅")
+
 while True:
     print("\n===== Personal Expense Tracker =====")
     print("1. Add Expense")
@@ -10,7 +24,7 @@ while True:
     choice = input("Choose an option (1-4): ")
 
     if choice == "1":
-        print("Add expense feature coming soon!")
+        add_expense()
     elif choice == "2":
         print("View expenses feature coming soon!")
     elif choice == "3":

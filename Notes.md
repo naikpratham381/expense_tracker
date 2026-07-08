@@ -19,4 +19,20 @@
 - git add . = stage ALL files (get them ready for a photo)
 - git commit -m "message" = take the actual photo, with a note describing what changed
 - Each commit gets a unique ID (like 1a704bf) so I can find it later
-- So far this is only saved on MY computer — GitHub will back it up online
+- So far this is only saved on MY computer — GitHub will back it up online.
+Quick recap of what you just learned
+ConceptWhat it means
+git init :Start tracking a folder
+git add . :  Stage files (get them ready)
+git commit -m "..."  :  Take a permanent snapshot with a note
+git remote add origin <url>  :  Link your project to an online GitHub repo
+git push  :  Upload your commits to GitHub
+
+-----------------------------------------------------------------------------------------
+
+ Key concepts you just learned
+
+ConceptMeaning
+def function_name():Create a reusable block of instructionsCalling a function function_name() : Actually running those instructions
+float() : Convert text into a decimal numberDictionary {...}Store labeled data (key-value pairs).
+append()Add an item to the end of a list
