@@ -62,6 +62,17 @@ def total_spending():
 
     return render_template("total_spending.html", total=total)
 
+@app.route("/filter")
+def filter_by_category():
+    search_category = request.args.get("category", "")
+    filtered = []
+
+    for expense in expenses:
+        if expense["category"].lower() == search_category.lower():
+            filtered.append(expense)
+
+    return render_template("filter.html", expenses=filtered, search_category=search_category)
+
 load_expenses()
 
 if __name__ == "__main__":

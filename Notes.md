@@ -147,3 +147,13 @@ append()Add an item to the end of a list
 - Calculated total in Python (app.py), then passed it to the template with render_template("total_spending.html", total=total)
 - Displayed with {{ total }} in HTML, same Jinja2 syntax as before
 - Key lesson: once you learn a pattern well (accumulator, templating), it works everywhere — command-line or web
+
+------------------------------------------------------------------
+
+## Phase 2 - Feature: Filter by Category (Web Page)
+- Learned: query parameters, request.args.get(), GET forms
+- Query parameters = small data sent through the URL itself (e.g. ?category=Food)
+- request.args.get("category", "") = reads a query parameter safely, with a default fallback
+- method="GET" on a form = puts form data into the URL — good for searches/filters (shareable, bookmarkable)
+- Passed both filtered results AND search_category to the template, so the input box remembers the last search
+- Reused the same lowercase-comparison filtering logic from main.py
