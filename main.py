@@ -14,6 +14,17 @@ def save_expenses():
         writer.writerows(expenses)
 
 
+def load_expenses():
+    if not os.path.exists(FILE_PATH):
+        return
+
+    with open(FILE_PATH, mode="r", newline="") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            row["amount"] = float(row["amount"])
+            expenses.append(row)
+
+
 def add_expense():
     amount = float(input("Enter amount spent: "))
     category = input("Enter category (e.g. Food, Travel): ")
@@ -92,6 +103,8 @@ def delete_expense():
     save_expenses()
     print(f"Deleted: ₹{removed['amount']} | {removed['category']} | {removed['description']}")
 
+
+load_expenses()
 
 while True:
     print("\n===== Personal Expense Tracker =====")

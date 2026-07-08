@@ -95,3 +95,12 @@ append()Add an item to the end of a list
 - Called save_expenses() after every add/delete so the file always matches memory
 - Note: expenses.csv now has data, but restarting the program still starts with an empty list in memory — Feature 8 (Load from File) will fix that.
 
+---------------------------------------------------------------------------------------
+## Feature 8: Load from File (Phase 1 complete! 🎉)
+- Learned: os.path.exists(), read mode, DictReader, top-level code execution
+- os.path.exists(path) = check if a file exists before trying to open it (avoids crashes)
+- mode="r" = open a file for READING (mode="w" was for writing)
+- csv.DictReader = reads CSV rows and turns them back into dictionaries automatically
+- Important: CSV always stores everything as TEXT, even numbers — had to convert amount back with float()
+- load_expenses() called once at the top level (outside any function/loop) so it runs immediately when the program starts
+- Now expenses truly persist between program runs — Phase 1 (command-line brain) is done!
