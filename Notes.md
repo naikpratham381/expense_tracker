@@ -104,3 +104,15 @@ append()Add an item to the end of a list
 - Important: CSV always stores everything as TEXT, even numbers — had to convert amount back with float()
 - load_expenses() called once at the top level (outside any function/loop) so it runs immediately when the program starts
 - Now expenses truly persist between program runs — Phase 1 (command-line brain) is done!
+
+--------------------------------------------------------------------------------------------
+
+## Phase 2 Started: Flask Website
+- Installed Flask using: py -m pip install flask
+- Created app.py (separate from main.py) as the website version
+- Learned: routes, decorators, render_template, templates folder
+- @app.route("/") = decorator that connects a URL address to a Python function
+- render_template("index.html") = tells Flask to find and display an HTML file from the templates folder
+- if __name__ == "__main__": = only run this code if the file is run directly (not imported)
+- app.run(debug=True) = starts the local web server, auto-restarts on save, shows helpful errors
+- Ran locally at http://127.0.0.1:5000 — successfully saw the homepage! 🎉
