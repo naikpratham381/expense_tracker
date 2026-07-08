@@ -70,3 +70,13 @@ append()Add an item to the end of a list
 - .lower() → converts text to lowercase so "Food" and "food" are treated as the same
 - not found_any → checks if the flag is still False after the loop (nothing was found)
 - Also updated the menu: added option 4 (Filter), shifted Exit to option 5
+
+-------------------------------------------------------------------------------------------
+
+## Feature 6: Delete Expense
+- Learned: reusing functions, .isdigit(), input validation, zero-based indexing, .pop()
+- Reused view_expenses() inside delete_expense() instead of rewriting the same display logic
+- .isdigit() checks if user input is only numbers (protects against crashes from bad input)
+- Python lists start counting at 0, so we subtract 1 from the human-friendly number shown on screen
+- expenses.pop(index) removes an item from the list AND gives it back to us (unlike .append which only adds)
+- Always validate user input before using it — never trust that the user typed what you expect

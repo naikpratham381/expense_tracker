@@ -14,6 +14,7 @@ def add_expense():
     expenses.append(expense)
     print("Expense added successfully! ✅")
 
+
 def view_expenses():
     if len(expenses) == 0:
         print("No expenses recorded yet.")
@@ -22,6 +23,7 @@ def view_expenses():
     print("\n----- All Expenses -----")
     for index, expense in enumerate(expenses, start=1):
         print(f"{index}. ₹{expense['amount']} | {expense['category']} | {expense['description']}")
+
 
 def total_spending():
     if len(expenses) == 0:
@@ -33,6 +35,7 @@ def total_spending():
         total = total + expense['amount']
 
     print(f"\n💰 Total Spending: ₹{total}")
+
 
 def filter_by_category():
     if len(expenses) == 0:
@@ -52,6 +55,26 @@ def filter_by_category():
         print("No expenses found in that category.")
 
 
+def delete_expense():
+    if len(expenses) == 0:
+        print("No expenses recorded yet.")
+        return
+
+    view_expenses()
+    choice = input("Enter the number of the expense to delete: ")
+
+    if not choice.isdigit():
+        print("Please enter a valid number.")
+        return
+
+    index = int(choice) - 1
+
+    if index < 0 or index >= len(expenses):
+        print("That number doesn't match any expense.")
+        return
+
+    removed = expenses.pop(index)
+    print(f"Deleted: ₹{removed['amount']} | {removed['category']} | {removed['description']}")
 
 
 while True:
@@ -60,9 +83,10 @@ while True:
     print("2. View Expenses")
     print("3. View Total Spending")
     print("4. Filter by Category")
-    print("5. Exit")
+    print("5. Delete Expense")
+    print("6. Exit")
 
-    choice = input("Choose an option (1-4): ")
+    choice = input("Choose an option (1-6): ")
 
     if choice == "1":
         add_expense()
@@ -73,7 +97,9 @@ while True:
     elif choice == "4":
         filter_by_category()
     elif choice == "5":
+        delete_expense()
+    elif choice == "6":
         print("Goodbye! 👋")
         break
     else:
-        print("Invalid choice. Please enter a number between 1 and 4.")
+        print("Invalid choice. Please enter a number between 1 and 6.")
