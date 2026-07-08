@@ -15,6 +15,7 @@
                 <th>Amount</th>
                 <th>Category</th>
                 <th>Description</th>
+                <th>Action</th>
             </tr>
             {% for expense in expenses %}
             <tr>
@@ -22,6 +23,11 @@
                 <td>₹{{ expense.amount }}</td>
                 <td>{{ expense.category }}</td>
                 <td>{{ expense.description }}</td>
+                <td>
+                    <form method="POST" action="/delete-expense/{{ loop.index0 }}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
             </tr>
             {% endfor %}
         </table>

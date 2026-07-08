@@ -73,6 +73,14 @@ def filter_by_category():
 
     return render_template("filter.html", expenses=filtered, search_category=search_category)
 
+@app.route("/delete-expense/<int:index>", methods=["POST"])
+def delete_expense(index):
+    if 0 <= index < len(expenses):
+        expenses.pop(index)
+        save_expenses()
+
+    return redirect(url_for("view_expenses"))
+
 load_expenses()
 
 if __name__ == "__main__":

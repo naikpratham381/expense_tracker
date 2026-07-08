@@ -157,3 +157,12 @@ append()Add an item to the end of a list
 - method="GET" on a form = puts form data into the URL — good for searches/filters (shareable, bookmarkable)
 - Passed both filtered results AND search_category to the template, so the input box remembers the last search
 - Reused the same lowercase-comparison filtering logic from main.py
+
+----------------------------------------------------------------
+
+## Phase 2 - Feature: Delete Expense (Web Page)
+- Learned: dynamic route parameters, function parameters, loop.index vs loop.index0
+- <int:index> in a route = captures a changing number directly from the URL, auto-validates it's an integer
+- The captured value becomes a parameter of the function: def delete_expense(index):
+- loop.index = 1-based counter (for display), loop.index0 = 0-based counter (matches real list positions)
+- Used loop.index0
