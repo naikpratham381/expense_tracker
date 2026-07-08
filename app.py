@@ -50,6 +50,10 @@ def add_expense():
 
     return render_template("add_expense.html")
 
+@app.route("/view-expenses")
+def view_expenses():
+    return render_template("view_expenses.html", expenses=expenses)
+
 
 load_expenses()
 

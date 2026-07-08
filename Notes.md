@@ -127,3 +127,15 @@ append()Add an item to the end of a list
 - redirect(url_for("home")) = sends browser to another page after processing (prevents duplicate submission on refresh)
 - Reused the same save_expenses()/expenses.append() logic from main.py — backend logic didn't need to change!
 - HTML <input name="..."> must match exactly what request.form["..."] looks for
+
+-----------------------------------------------------------------------
+
+## Phase 2 - Feature: View Expenses (Web Page)
+- Learned: Jinja2 templating basics
+- render_template(file, expenses=expenses) = passes Python data into the HTML template
+- {% if %} {% else %} {% endif %} = Jinja2's version of if/else, written inside HTML
+- {% for %} {% endfor %} = Jinja2's version of a for loop, written inside HTML (needs explicit endfor, unlike Python's indentation)
+- {{ variable }} = displays a value inside HTML (like print())
+- expenses|length = Jinja2's version of len()
+- loop.index = automatic counter Jinja2 provides inside a for-loop, starts at 1
+- expense.amount (dot notation) = access dictionary values inside templates, instead of expense['amount']

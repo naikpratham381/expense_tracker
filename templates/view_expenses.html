@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Expenses</title>
+</head>
+<body>
+    <h1>All Expenses</h1>
+
+    {% if expenses|length == 0 %}
+        <p>No expenses recorded yet.</p>
+    {% else %}
+        <table border="1">
+            <tr>
+                <th>#</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Description</th>
+            </tr>
+            {% for expense in expenses %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>₹{{ expense.amount }}</td>
+                <td>{{ expense.category }}</td>
+                <td>{{ expense.description }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
